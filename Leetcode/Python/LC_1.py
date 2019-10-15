@@ -1,6 +1,13 @@
-class LC_1(object):
+class LC_1:
 	"""docstring for LC_1"""
-	def __init__(self, arg):
-		super(LC_1, self).__init__()
-		self.arg = arg
-		
+	@classmethod
+	def twoSum(self, nums, target):
+		numdict = dict()
+		for idx, num in enumerate(nums):
+		    if target - num in numdict:
+		        return [numdict[target - num], idx]
+		    numdict[num] = idx
+		return []
+
+if __name__ == '__main__':
+	print(LC_1.twoSum([1,2,4,6], 6))
